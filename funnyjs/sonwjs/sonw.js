@@ -8,7 +8,7 @@
 		minSize		: 10,
 		maxSize		: 20,
 		newOn		: 1000,
-		flakeColor	: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+		flakeColor	: '' /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
 	},
 	options	= $.extend({}, defaults, options);
 	var interval= setInterval( function(){
@@ -22,7 +22,7 @@
 		left: startPositionLeft,
 		opacity: startOpacity,
 		'font-size': sizeFlake,
-		color: options.flakeColor
+		color: '#' + Math.random().toString(16).substr(2, 6).toUpperCase()
 	}).animate({
 		top: endPositionTop,
 		left: endPositionLeft,
